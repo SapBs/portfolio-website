@@ -8,9 +8,10 @@ export default defineConfig({
       vue(),
       tailwindcss(),
   ],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
+    base: 'portfolio-webiste',
+    resolve: {
+      alias: {
+          '@': path.resolve(__dirname, './src')
     }
-  }
+  },
 })
