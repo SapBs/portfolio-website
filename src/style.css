@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+@import '@fontsource/ubuntu';
+@import '@fontsource/ibm-plex-mono';
+@import '@fontsource-variable/mulish';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: "ubuntu", ui-sans-serif, system-ui, sans-serif;
+
+
+    --color-background: #0f0f0f;
+    --color-card: #1a1a1a;
+    --color-accent: rgb(141, 109, 231);
+
+
+    --color-backgroundWhite: #d7cdf6;
+    --color-white: #ffffff;
+    --color-muted: #a0a0a0;
+    --color-accentWhite: #ffffff;
+    --color-inputWhite: #ece7f8;
+
+
+    --radius-lg: 1rem;
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
