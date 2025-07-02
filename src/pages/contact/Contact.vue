@@ -32,9 +32,9 @@
     <Card corner="right" :delay="0.6" class="bg-accentWhite dark:bg-card mt-6">
       <h3 class="text-2xl font-semibold dark:text-white mb-2">Ссылки</h3>
       <ul class="dark:text-gray-300 space-y-2">
-        <li><a href="https://spb.hh.ru/resume/561db66fff086ed8980039ed1f47646b4d4c4c" target="_blank" class="hover:text-white">Резюме на hh.ru</a></li>
-        <li><a href="https://github.com/SapBs" target="_blank" class="hover:text-white">Мой GitHub</a></li>
-        <li><a href="https://t.me/ChasingAtlantic" target="_blank" class="hover:text-white">Ну или в Telegram</a></li>
+        <li><a href="https://spb.hh.ru/resume/561db66fff086ed8980039ed1f47646b4d4c4c" target="_blank" class="dark:hover:text-white">Резюме на hh.ru</a></li>
+        <li><a href="https://github.com/SapBs" target="_blank" class="dark:hover:text-white">Мой GitHub</a></li>
+        <li><a href="https://t.me/ChasingAtlantic" target="_blank" class="dark:hover:text-white">Ну или в Telegram</a></li>
       </ul>
     </Card>
   </main>

@@ -13,7 +13,6 @@
 <script setup lang="ts">
 import { Motion } from '@oku-ui/motion'
 
-// Define props to control which corner the animation comes from, animation type, and delay
 const props = defineProps({
   corner: {
     type: String,
@@ -35,12 +34,11 @@ const props = defineProps({
   }
 })
 
-// Get initial animation state based on animation type and corner
+
 const getInitialState = () => {
   if (props.animationType === 'fade-only') {
     return { opacity: 0, x: 0, y: 0 }
   } else {
-    // For slide animation, calculate x and y based on corner
     return {
       opacity: 0,
       x: getInitialX(),
@@ -49,7 +47,6 @@ const getInitialState = () => {
   }
 }
 
-// Calculate initial X position based on corner
 const getInitialX = () => {
   if (props.corner === 'left') {
     return -100
@@ -64,7 +61,6 @@ const getInitialX = () => {
   }
 }
 
-// Calculate initial Y position based on corner
 const getInitialY = () => {
   if (props.corner === 'bottom') {
     return 100

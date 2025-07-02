@@ -5,23 +5,23 @@ const routes: RouteRecordRaw[] = [
     {
         path: '/',
         name: 'Home',
-        component: () => import('@/pages/home/index.vue'),
+        component: () => import('@/pages/home/Home.vue'),
     },
 
     {
         path: '/projects',
         name: 'Projects',
-        component: () => import('@/pages/projects/index.vue'),
+        component: () => import('@/pages/projects/Projects.vue'),
     },
 
     {
         path: '/contact',
         name: 'Contact',
-        component: () => import('@/pages/contact/index.vue'),
+        component: () => import('@/pages/contact/Contact.vue'),
     },
 ]
 
 export const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes,
 })

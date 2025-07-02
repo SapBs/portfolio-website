@@ -1,5 +1,5 @@
 <template>
-  <Card corner="bottom" :delay="delay" class="bg-accentWhite">
+  <Card corner="bottom" :delay="delay" class="bg-accentWhite dark:bg-card">
 
 
     <img :src="preview" alt="Preview" class="rounded-lg mb-3 object-cover w-full max-h-64" />
@@ -25,7 +25,7 @@ defineProps<{
   title: string
   preview: string
   stack: string
-  demoUrl: string
+  demoUrl?: string
   isNDA: boolean
   delay?: number
 }>()
