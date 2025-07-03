@@ -1,12 +1,12 @@
 <template>
   <Motion
-    :initial="getInitialState()"
-    :animate="{ opacity: 1, x: 0, y: 0 }"
-    :transition="{ duration: 0.8, ease: 'easeOut', delay: props.delay }"
-    class="rounded-xl"
-    :class="isPhoto ? '' : 'p-4 md:p-6'"
+      :initial="getInitialState()"
+      :animate="{ opacity: 1, x: 0, y: 0 }"
+      :transition="{ duration: 0.5, ease: 'easeInOut', delay: props.delay }"
+      class="rounded-xl"
+      :class="isPhoto ? '' : 'p-4 md:p-6'"
   >
-      <slot />
+    <slot />
   </Motion>
 </template>
 
@@ -16,8 +16,9 @@ import { Motion } from '@oku-ui/motion'
 const props = defineProps({
   corner: {
     type: String,
-    default: 'top-left',
-    validator: (value: string) => ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'bottom', 'left', 'right'].includes(value)
+    default: 'left',
+    validator: (value: string) =>
+        ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'bottom', 'left', 'right'].includes(value)
   },
   animationType: {
     type: String,
@@ -34,42 +35,32 @@ const props = defineProps({
   }
 })
 
-
 const getInitialState = () => {
   if (props.animationType === 'fade-only') {
     return { opacity: 0, x: 0, y: 0 }
-  } else {
-    return {
-      opacity: 0,
-      x: getInitialX(),
-      y: getInitialY()
-    }
+  }
+
+  return {
+    opacity: 0,
+    x: getInitialX(),
+    y: getInitialY()
   }
 }
 
 const getInitialX = () => {
-  if (props.corner === 'left') {
-    return -100
-  } else if (props.corner.includes('left')) {
-    return -100
-  } else if (props.corner === 'right') {
-    return 100
-  } else if (props.corner.includes('right')) {
-    return 100
-  } else {
-    return 0
+  if (['left', 'top-left', 'bottom-left'].includes(props.corner)) {
+    return -80
   }
+  if (['right', 'top-right', 'bottom-right'].includes(props.corner)) {
+    return 80
+  }
+  return 0
 }
 
 const getInitialY = () => {
   if (props.corner === 'bottom') {
-    return 100
-  } else if (props.corner.includes('bottom')) {
-    return 100
-  } else if (props.corner.includes('top')) {
-    return -100
-  } else {
-    return 0
+    return 80
   }
+  return 0
 }
 </script>
